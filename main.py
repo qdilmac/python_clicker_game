@@ -24,6 +24,12 @@ def luck():
     else:
         print("One time use only.")
 
+def refresh():
+    global is_used
+    counter_label.config(text=str(0))
+    if is_used == True:
+        is_used = False
+
 def main():
     root = tk.Tk()
     root.title("Simple Clicker GUI")
@@ -38,7 +44,8 @@ def main():
     luck_button = tk.Button(root,text="Feeling Lucky?",command=luck)
     luck_button.pack()
 
-    
+    refresh_button = tk.Button(root, text="Refresh!",command=refresh)
+    refresh_button.pack()
 
     root.mainloop()
 
